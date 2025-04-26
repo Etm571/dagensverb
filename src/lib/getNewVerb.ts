@@ -33,7 +33,11 @@ const getRandomVerb = () => {
         });
     const randomVerb = randomVerbTry;
 
-    return randomVerb;
+    const verbJSON = {
+        verb: randomVerb
+    }
+
+    return verbJSON;
 }
 
 export { getRandomVerb };
