@@ -1,8 +1,9 @@
 const fetchVerb = async () => {
   try {
-    const response = await fetch('http://localhost:3000/api/verb'); 
+    const response = await fetch('http://localhost:3000/api/verb');
     if (response.ok) {
       const data = await response.json();
+      console.log('Fetched verb:', data);
       const verb = data.verb;
       return verb;
 

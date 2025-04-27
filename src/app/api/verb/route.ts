@@ -3,24 +3,32 @@ import path from 'path';
 import { NextResponse, NextRequest } from 'next/server';
 import { getRandomVerb } from '../../../lib/getNewVerb';
 import cron from 'node-cron';
-
-var verb: Object;
-verb = getRandomVerb();
+import { get } from 'http';
 
 
-cron.schedule('0 0 * * *', async () => {
+var verb = await getRandomVerb();
+
+var verbJSON = {
+  verb: verb,
+}
+
+
+cron.schedule('52 18 * * *', async () => {
   try {
-    verb = getRandomVerb();
-    console.log('Random verb fetched:', verb);
+    verb = await getRandomVerb();
+    verbJSON = {
+      verb: verb,
+    }
 
-} catch (error) {
+  } catch (error) {
     console.error('Error fetching random verb at midnight:', error);
   }
 });
 
 export async function GET(request: NextRequest) {
   try {
-    return NextResponse.json(verb);
+    console.log(verbJSON)
+    return NextResponse.json(verbJSON, { status: 200 });
   } catch (error) {
     console.error('Error reading verbs.json:', error);
     return NextResponse.json({ error: 'Failed to load verbs' }, { status: 500 });
