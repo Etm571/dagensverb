@@ -1,14 +1,12 @@
-import { promises as fs } from 'fs';
-import path from 'path';
 import { NextResponse, NextRequest } from 'next/server';
 import { getRandomVerb } from '../../../lib/getNewVerb';
 import cron from 'node-cron';
-import { get } from 'http';
 
 
-var verb = await getRandomVerb();
 
-var verbJSON = {
+let verb = await getRandomVerb();
+
+let verbJSON = {
   verb: verb,
 }
 
