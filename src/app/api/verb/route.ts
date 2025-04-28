@@ -11,7 +11,7 @@ let verbJSON = {
 }
 
 
-cron.schedule('52 18 * * *', async () => {
+cron.schedule('0 0 * * *', async () => {
   try {
     verb = await getRandomVerb();
     verbJSON = {
