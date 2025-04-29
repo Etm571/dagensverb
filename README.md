@@ -60,7 +60,7 @@ Dagens Verb is a web application that displays a new verb every day to help user
 
 3. Open your browser and navigate to `http://localhost:3000`.
 
-**Important:**When rebooting the container, please remove the old container storage before booting it up again:
+**Important:** When rebooting the container, please remove the old container storage before booting it up again:
 
     ```bash
     docker-compose down -v
