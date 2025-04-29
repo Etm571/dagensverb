@@ -62,10 +62,8 @@ Dagens Verb is a web application that displays a new verb every day to help user
 
 **Important:** When rebooting the container, please remove the old container storage before booting it up again:
 
-    ```bash
     docker-compose down -v
-    ```
-
+   
 
 ## Scripts
 
