@@ -33,6 +33,10 @@ Dagens Verb is a web application that displays a new verb every day to help user
       ```bash
       npx prisma migrate dev
       ```
+    - The database will be seeded automaticly with some Swedish verbs. If you want to skip the seeding process, use the following command instead:
+      ```bash
+      npx prisma migrate dev --skip-seed
+      ```
 
 4. Start the development server:
     ```bash

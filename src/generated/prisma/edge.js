@@ -167,7 +167,7 @@ const config = {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgresql://postgres:postgres@localhost:5432/dagensverb?schema=public"
+        "value": "postgres://avnadmin:AVNS_YGa1FdUF3CbhmlPVN1K@pg-3302891f-dagensverb.l.aivencloud.com:24264/defaultdb?sslmode=require"
       }
     }
   },
