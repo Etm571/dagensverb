@@ -14,8 +14,8 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model verbsList {
+model verbslist {
   id       Int    @id @default(autoincrement())
   verbs    Json @default("[]")
-  oldVerbs Json @default("[]")
+  oldverbs Json @default("[]")
 }

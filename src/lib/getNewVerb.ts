@@ -16,7 +16,7 @@ async function getRandomVerb() {
 
     oldVerbs.push(randomVerb);
 
-    const updatedVerbsList = await prisma.verbsList.update({
+    await prisma.verbsList.update({
         where: { id: verbsList[0].id },
         data: {
             oldVerbs: oldVerbs,
