@@ -14,10 +14,10 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
- * Model verbsList
+ * Model verbslist
  * 
  */
-export type verbsList = $Result.DefaultSelection<Prisma.$verbsListPayload>
+export type verbslist = $Result.DefaultSelection<Prisma.$verbslistPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -26,8 +26,8 @@ export type verbsList = $Result.DefaultSelection<Prisma.$verbsListPayload>
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more VerbsLists
- * const verbsLists = await prisma.verbsList.findMany()
+ * // Fetch zero or more Verbslists
+ * const verbslists = await prisma.verbslist.findMany()
  * ```
  *
  *
@@ -47,8 +47,8 @@ export class PrismaClient<
    * @example
    * ```
    * const prisma = new PrismaClient()
-   * // Fetch zero or more VerbsLists
-   * const verbsLists = await prisma.verbsList.findMany()
+   * // Fetch zero or more Verbslists
+   * const verbslists = await prisma.verbslist.findMany()
    * ```
    *
    *
@@ -145,14 +145,14 @@ export class PrismaClient<
   }>>
 
       /**
-   * `prisma.verbsList`: Exposes CRUD operations for the **verbsList** model.
+   * `prisma.verbslist`: Exposes CRUD operations for the **verbslist** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more VerbsLists
-    * const verbsLists = await prisma.verbsList.findMany()
+    * // Fetch zero or more Verbslists
+    * const verbslists = await prisma.verbslist.findMany()
     * ```
     */
-  get verbsList(): Prisma.verbsListDelegate<ExtArgs, ClientOptions>;
+  get verbslist(): Prisma.verbslistDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -593,7 +593,7 @@ export namespace Prisma {
 
 
   export const ModelName: {
-    verbsList: 'verbsList'
+    verbslist: 'verbslist'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -612,81 +612,81 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "verbsList"
+      modelProps: "verbslist"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
-      verbsList: {
-        payload: Prisma.$verbsListPayload<ExtArgs>
-        fields: Prisma.verbsListFieldRefs
+      verbslist: {
+        payload: Prisma.$verbslistPayload<ExtArgs>
+        fields: Prisma.verbslistFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.verbsListFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload> | null
+            args: Prisma.verbslistFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.verbsListFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>
+            args: Prisma.verbslistFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>
           }
           findFirst: {
-            args: Prisma.verbsListFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload> | null
+            args: Prisma.verbslistFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.verbsListFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>
+            args: Prisma.verbslistFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>
           }
           findMany: {
-            args: Prisma.verbsListFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>[]
+            args: Prisma.verbslistFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>[]
           }
           create: {
-            args: Prisma.verbsListCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>
+            args: Prisma.verbslistCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>
           }
           createMany: {
-            args: Prisma.verbsListCreateManyArgs<ExtArgs>
+            args: Prisma.verbslistCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.verbsListCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>[]
+            args: Prisma.verbslistCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>[]
           }
           delete: {
-            args: Prisma.verbsListDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>
+            args: Prisma.verbslistDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>
           }
           update: {
-            args: Prisma.verbsListUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>
+            args: Prisma.verbslistUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>
           }
           deleteMany: {
-            args: Prisma.verbsListDeleteManyArgs<ExtArgs>
+            args: Prisma.verbslistDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.verbsListUpdateManyArgs<ExtArgs>
+            args: Prisma.verbslistUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.verbsListUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>[]
+            args: Prisma.verbslistUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>[]
           }
           upsert: {
-            args: Prisma.verbsListUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$verbsListPayload>
+            args: Prisma.verbslistUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$verbslistPayload>
           }
           aggregate: {
-            args: Prisma.VerbsListAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregateVerbsList>
+            args: Prisma.VerbslistAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateVerbslist>
           }
           groupBy: {
-            args: Prisma.verbsListGroupByArgs<ExtArgs>
-            result: $Utils.Optional<VerbsListGroupByOutputType>[]
+            args: Prisma.verbslistGroupByArgs<ExtArgs>
+            result: $Utils.Optional<VerbslistGroupByOutputType>[]
           }
           count: {
-            args: Prisma.verbsListCountArgs<ExtArgs>
-            result: $Utils.Optional<VerbsListCountAggregateOutputType> | number
+            args: Prisma.verbslistCountArgs<ExtArgs>
+            result: $Utils.Optional<VerbslistCountAggregateOutputType> | number
           }
         }
       }
@@ -774,7 +774,7 @@ export namespace Prisma {
     omit?: Prisma.GlobalOmitConfig
   }
   export type GlobalOmitConfig = {
-    verbsList?: verbsListOmit
+    verbslist?: verbslistOmit
   }
 
   /* Types for Logging */
@@ -870,338 +870,338 @@ export namespace Prisma {
    */
 
   /**
-   * Model verbsList
+   * Model verbslist
    */
 
-  export type AggregateVerbsList = {
-    _count: VerbsListCountAggregateOutputType | null
-    _avg: VerbsListAvgAggregateOutputType | null
-    _sum: VerbsListSumAggregateOutputType | null
-    _min: VerbsListMinAggregateOutputType | null
-    _max: VerbsListMaxAggregateOutputType | null
+  export type AggregateVerbslist = {
+    _count: VerbslistCountAggregateOutputType | null
+    _avg: VerbslistAvgAggregateOutputType | null
+    _sum: VerbslistSumAggregateOutputType | null
+    _min: VerbslistMinAggregateOutputType | null
+    _max: VerbslistMaxAggregateOutputType | null
   }
 
-  export type VerbsListAvgAggregateOutputType = {
+  export type VerbslistAvgAggregateOutputType = {
     id: number | null
   }
 
-  export type VerbsListSumAggregateOutputType = {
+  export type VerbslistSumAggregateOutputType = {
     id: number | null
   }
 
-  export type VerbsListMinAggregateOutputType = {
+  export type VerbslistMinAggregateOutputType = {
     id: number | null
   }
 
-  export type VerbsListMaxAggregateOutputType = {
+  export type VerbslistMaxAggregateOutputType = {
     id: number | null
   }
 
-  export type VerbsListCountAggregateOutputType = {
+  export type VerbslistCountAggregateOutputType = {
     id: number
     verbs: number
-    oldVerbs: number
+    oldverbs: number
     _all: number
   }
 
 
-  export type VerbsListAvgAggregateInputType = {
+  export type VerbslistAvgAggregateInputType = {
     id?: true
   }
 
-  export type VerbsListSumAggregateInputType = {
+  export type VerbslistSumAggregateInputType = {
     id?: true
   }
 
-  export type VerbsListMinAggregateInputType = {
+  export type VerbslistMinAggregateInputType = {
     id?: true
   }
 
-  export type VerbsListMaxAggregateInputType = {
+  export type VerbslistMaxAggregateInputType = {
     id?: true
   }
 
-  export type VerbsListCountAggregateInputType = {
+  export type VerbslistCountAggregateInputType = {
     id?: true
     verbs?: true
-    oldVerbs?: true
+    oldverbs?: true
     _all?: true
   }
 
-  export type VerbsListAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type VerbslistAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which verbsList to aggregate.
+     * Filter which verbslist to aggregate.
      */
-    where?: verbsListWhereInput
+    where?: verbslistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of verbsLists to fetch.
+     * Determine the order of verbslists to fetch.
      */
-    orderBy?: verbsListOrderByWithRelationInput | verbsListOrderByWithRelationInput[]
+    orderBy?: verbslistOrderByWithRelationInput | verbslistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: verbsListWhereUniqueInput
+    cursor?: verbslistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` verbsLists from the position of the cursor.
+     * Take `±n` verbslists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` verbsLists.
+     * Skip the first `n` verbslists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned verbsLists
+     * Count returned verbslists
     **/
-    _count?: true | VerbsListCountAggregateInputType
+    _count?: true | VerbslistCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: VerbsListAvgAggregateInputType
+    _avg?: VerbslistAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: VerbsListSumAggregateInputType
+    _sum?: VerbslistSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: VerbsListMinAggregateInputType
+    _min?: VerbslistMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: VerbsListMaxAggregateInputType
+    _max?: VerbslistMaxAggregateInputType
   }
 
-  export type GetVerbsListAggregateType<T extends VerbsListAggregateArgs> = {
-        [P in keyof T & keyof AggregateVerbsList]: P extends '_count' | 'count'
+  export type GetVerbslistAggregateType<T extends VerbslistAggregateArgs> = {
+        [P in keyof T & keyof AggregateVerbslist]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregateVerbsList[P]>
-      : GetScalarType<T[P], AggregateVerbsList[P]>
+        : GetScalarType<T[P], AggregateVerbslist[P]>
+      : GetScalarType<T[P], AggregateVerbslist[P]>
   }
 
 
 
 
-  export type verbsListGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: verbsListWhereInput
-    orderBy?: verbsListOrderByWithAggregationInput | verbsListOrderByWithAggregationInput[]
-    by: VerbsListScalarFieldEnum[] | VerbsListScalarFieldEnum
-    having?: verbsListScalarWhereWithAggregatesInput
+  export type verbslistGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: verbslistWhereInput
+    orderBy?: verbslistOrderByWithAggregationInput | verbslistOrderByWithAggregationInput[]
+    by: VerbslistScalarFieldEnum[] | VerbslistScalarFieldEnum
+    having?: verbslistScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: VerbsListCountAggregateInputType | true
-    _avg?: VerbsListAvgAggregateInputType
-    _sum?: VerbsListSumAggregateInputType
-    _min?: VerbsListMinAggregateInputType
-    _max?: VerbsListMaxAggregateInputType
+    _count?: VerbslistCountAggregateInputType | true
+    _avg?: VerbslistAvgAggregateInputType
+    _sum?: VerbslistSumAggregateInputType
+    _min?: VerbslistMinAggregateInputType
+    _max?: VerbslistMaxAggregateInputType
   }
 
-  export type VerbsListGroupByOutputType = {
+  export type VerbslistGroupByOutputType = {
     id: number
     verbs: JsonValue
-    oldVerbs: JsonValue
-    _count: VerbsListCountAggregateOutputType | null
-    _avg: VerbsListAvgAggregateOutputType | null
-    _sum: VerbsListSumAggregateOutputType | null
-    _min: VerbsListMinAggregateOutputType | null
-    _max: VerbsListMaxAggregateOutputType | null
+    oldverbs: JsonValue
+    _count: VerbslistCountAggregateOutputType | null
+    _avg: VerbslistAvgAggregateOutputType | null
+    _sum: VerbslistSumAggregateOutputType | null
+    _min: VerbslistMinAggregateOutputType | null
+    _max: VerbslistMaxAggregateOutputType | null
   }
 
-  type GetVerbsListGroupByPayload<T extends verbsListGroupByArgs> = Prisma.PrismaPromise<
+  type GetVerbslistGroupByPayload<T extends verbslistGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<VerbsListGroupByOutputType, T['by']> &
+      PickEnumerable<VerbslistGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof VerbsListGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof VerbslistGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], VerbsListGroupByOutputType[P]>
-            : GetScalarType<T[P], VerbsListGroupByOutputType[P]>
+              : GetScalarType<T[P], VerbslistGroupByOutputType[P]>
+            : GetScalarType<T[P], VerbslistGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type verbsListSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type verbslistSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     verbs?: boolean
-    oldVerbs?: boolean
-  }, ExtArgs["result"]["verbsList"]>
+    oldverbs?: boolean
+  }, ExtArgs["result"]["verbslist"]>
 
-  export type verbsListSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type verbslistSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     verbs?: boolean
-    oldVerbs?: boolean
-  }, ExtArgs["result"]["verbsList"]>
+    oldverbs?: boolean
+  }, ExtArgs["result"]["verbslist"]>
 
-  export type verbsListSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type verbslistSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     verbs?: boolean
-    oldVerbs?: boolean
-  }, ExtArgs["result"]["verbsList"]>
+    oldverbs?: boolean
+  }, ExtArgs["result"]["verbslist"]>
 
-  export type verbsListSelectScalar = {
+  export type verbslistSelectScalar = {
     id?: boolean
     verbs?: boolean
-    oldVerbs?: boolean
+    oldverbs?: boolean
   }
 
-  export type verbsListOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "verbs" | "oldVerbs", ExtArgs["result"]["verbsList"]>
+  export type verbslistOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "verbs" | "oldverbs", ExtArgs["result"]["verbslist"]>
 
-  export type $verbsListPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "verbsList"
+  export type $verbslistPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "verbslist"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
       verbs: Prisma.JsonValue
-      oldVerbs: Prisma.JsonValue
-    }, ExtArgs["result"]["verbsList"]>
+      oldverbs: Prisma.JsonValue
+    }, ExtArgs["result"]["verbslist"]>
     composites: {}
   }
 
-  type verbsListGetPayload<S extends boolean | null | undefined | verbsListDefaultArgs> = $Result.GetResult<Prisma.$verbsListPayload, S>
+  type verbslistGetPayload<S extends boolean | null | undefined | verbslistDefaultArgs> = $Result.GetResult<Prisma.$verbslistPayload, S>
 
-  type verbsListCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<verbsListFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: VerbsListCountAggregateInputType | true
+  type verbslistCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<verbslistFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: VerbslistCountAggregateInputType | true
     }
 
-  export interface verbsListDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['verbsList'], meta: { name: 'verbsList' } }
+  export interface verbslistDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['verbslist'], meta: { name: 'verbslist' } }
     /**
-     * Find zero or one VerbsList that matches the filter.
-     * @param {verbsListFindUniqueArgs} args - Arguments to find a VerbsList
+     * Find zero or one Verbslist that matches the filter.
+     * @param {verbslistFindUniqueArgs} args - Arguments to find a Verbslist
      * @example
-     * // Get one VerbsList
-     * const verbsList = await prisma.verbsList.findUnique({
+     * // Get one Verbslist
+     * const verbslist = await prisma.verbslist.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends verbsListFindUniqueArgs>(args: SelectSubset<T, verbsListFindUniqueArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends verbslistFindUniqueArgs>(args: SelectSubset<T, verbslistFindUniqueArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one VerbsList that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Verbslist that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {verbsListFindUniqueOrThrowArgs} args - Arguments to find a VerbsList
+     * @param {verbslistFindUniqueOrThrowArgs} args - Arguments to find a Verbslist
      * @example
-     * // Get one VerbsList
-     * const verbsList = await prisma.verbsList.findUniqueOrThrow({
+     * // Get one Verbslist
+     * const verbslist = await prisma.verbslist.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends verbsListFindUniqueOrThrowArgs>(args: SelectSubset<T, verbsListFindUniqueOrThrowArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends verbslistFindUniqueOrThrowArgs>(args: SelectSubset<T, verbslistFindUniqueOrThrowArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first VerbsList that matches the filter.
+     * Find the first Verbslist that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {verbsListFindFirstArgs} args - Arguments to find a VerbsList
+     * @param {verbslistFindFirstArgs} args - Arguments to find a Verbslist
      * @example
-     * // Get one VerbsList
-     * const verbsList = await prisma.verbsList.findFirst({
+     * // Get one Verbslist
+     * const verbslist = await prisma.verbslist.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends verbsListFindFirstArgs>(args?: SelectSubset<T, verbsListFindFirstArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends verbslistFindFirstArgs>(args?: SelectSubset<T, verbslistFindFirstArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first VerbsList that matches the filter or
+     * Find the first Verbslist that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {verbsListFindFirstOrThrowArgs} args - Arguments to find a VerbsList
+     * @param {verbslistFindFirstOrThrowArgs} args - Arguments to find a Verbslist
      * @example
-     * // Get one VerbsList
-     * const verbsList = await prisma.verbsList.findFirstOrThrow({
+     * // Get one Verbslist
+     * const verbslist = await prisma.verbslist.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends verbsListFindFirstOrThrowArgs>(args?: SelectSubset<T, verbsListFindFirstOrThrowArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends verbslistFindFirstOrThrowArgs>(args?: SelectSubset<T, verbslistFindFirstOrThrowArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more VerbsLists that matches the filter.
+     * Find zero or more Verbslists that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {verbsListFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {verbslistFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all VerbsLists
-     * const verbsLists = await prisma.verbsList.findMany()
+     * // Get all Verbslists
+     * const verbslists = await prisma.verbslist.findMany()
      * 
-     * // Get first 10 VerbsLists
-     * const verbsLists = await prisma.verbsList.findMany({ take: 10 })
+     * // Get first 10 Verbslists
+     * const verbslists = await prisma.verbslist.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const verbsListWithIdOnly = await prisma.verbsList.findMany({ select: { id: true } })
+     * const verbslistWithIdOnly = await prisma.verbslist.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends verbsListFindManyArgs>(args?: SelectSubset<T, verbsListFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends verbslistFindManyArgs>(args?: SelectSubset<T, verbslistFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a VerbsList.
-     * @param {verbsListCreateArgs} args - Arguments to create a VerbsList.
+     * Create a Verbslist.
+     * @param {verbslistCreateArgs} args - Arguments to create a Verbslist.
      * @example
-     * // Create one VerbsList
-     * const VerbsList = await prisma.verbsList.create({
+     * // Create one Verbslist
+     * const Verbslist = await prisma.verbslist.create({
      *   data: {
-     *     // ... data to create a VerbsList
+     *     // ... data to create a Verbslist
      *   }
      * })
      * 
      */
-    create<T extends verbsListCreateArgs>(args: SelectSubset<T, verbsListCreateArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends verbslistCreateArgs>(args: SelectSubset<T, verbslistCreateArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many VerbsLists.
-     * @param {verbsListCreateManyArgs} args - Arguments to create many VerbsLists.
+     * Create many Verbslists.
+     * @param {verbslistCreateManyArgs} args - Arguments to create many Verbslists.
      * @example
-     * // Create many VerbsLists
-     * const verbsList = await prisma.verbsList.createMany({
+     * // Create many Verbslists
+     * const verbslist = await prisma.verbslist.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends verbsListCreateManyArgs>(args?: SelectSubset<T, verbsListCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends verbslistCreateManyArgs>(args?: SelectSubset<T, verbslistCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many VerbsLists and returns the data saved in the database.
-     * @param {verbsListCreateManyAndReturnArgs} args - Arguments to create many VerbsLists.
+     * Create many Verbslists and returns the data saved in the database.
+     * @param {verbslistCreateManyAndReturnArgs} args - Arguments to create many Verbslists.
      * @example
-     * // Create many VerbsLists
-     * const verbsList = await prisma.verbsList.createManyAndReturn({
+     * // Create many Verbslists
+     * const verbslist = await prisma.verbslist.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many VerbsLists and only return the `id`
-     * const verbsListWithIdOnly = await prisma.verbsList.createManyAndReturn({
+     * // Create many Verbslists and only return the `id`
+     * const verbslistWithIdOnly = await prisma.verbslist.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -1211,28 +1211,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends verbsListCreateManyAndReturnArgs>(args?: SelectSubset<T, verbsListCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends verbslistCreateManyAndReturnArgs>(args?: SelectSubset<T, verbslistCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a VerbsList.
-     * @param {verbsListDeleteArgs} args - Arguments to delete one VerbsList.
+     * Delete a Verbslist.
+     * @param {verbslistDeleteArgs} args - Arguments to delete one Verbslist.
      * @example
-     * // Delete one VerbsList
-     * const VerbsList = await prisma.verbsList.delete({
+     * // Delete one Verbslist
+     * const Verbslist = await prisma.verbslist.delete({
      *   where: {
-     *     // ... filter to delete one VerbsList
+     *     // ... filter to delete one Verbslist
      *   }
      * })
      * 
      */
-    delete<T extends verbsListDeleteArgs>(args: SelectSubset<T, verbsListDeleteArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends verbslistDeleteArgs>(args: SelectSubset<T, verbslistDeleteArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one VerbsList.
-     * @param {verbsListUpdateArgs} args - Arguments to update one VerbsList.
+     * Update one Verbslist.
+     * @param {verbslistUpdateArgs} args - Arguments to update one Verbslist.
      * @example
-     * // Update one VerbsList
-     * const verbsList = await prisma.verbsList.update({
+     * // Update one Verbslist
+     * const verbslist = await prisma.verbslist.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1242,30 +1242,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends verbsListUpdateArgs>(args: SelectSubset<T, verbsListUpdateArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends verbslistUpdateArgs>(args: SelectSubset<T, verbslistUpdateArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more VerbsLists.
-     * @param {verbsListDeleteManyArgs} args - Arguments to filter VerbsLists to delete.
+     * Delete zero or more Verbslists.
+     * @param {verbslistDeleteManyArgs} args - Arguments to filter Verbslists to delete.
      * @example
-     * // Delete a few VerbsLists
-     * const { count } = await prisma.verbsList.deleteMany({
+     * // Delete a few Verbslists
+     * const { count } = await prisma.verbslist.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends verbsListDeleteManyArgs>(args?: SelectSubset<T, verbsListDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends verbslistDeleteManyArgs>(args?: SelectSubset<T, verbslistDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more VerbsLists.
+     * Update zero or more Verbslists.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {verbsListUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {verbslistUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many VerbsLists
-     * const verbsList = await prisma.verbsList.updateMany({
+     * // Update many Verbslists
+     * const verbslist = await prisma.verbslist.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1275,14 +1275,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends verbsListUpdateManyArgs>(args: SelectSubset<T, verbsListUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends verbslistUpdateManyArgs>(args: SelectSubset<T, verbslistUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more VerbsLists and returns the data updated in the database.
-     * @param {verbsListUpdateManyAndReturnArgs} args - Arguments to update many VerbsLists.
+     * Update zero or more Verbslists and returns the data updated in the database.
+     * @param {verbslistUpdateManyAndReturnArgs} args - Arguments to update many Verbslists.
      * @example
-     * // Update many VerbsLists
-     * const verbsList = await prisma.verbsList.updateManyAndReturn({
+     * // Update many Verbslists
+     * const verbslist = await prisma.verbslist.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -1291,8 +1291,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more VerbsLists and only return the `id`
-     * const verbsListWithIdOnly = await prisma.verbsList.updateManyAndReturn({
+     * // Update zero or more Verbslists and only return the `id`
+     * const verbslistWithIdOnly = await prisma.verbslist.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -1305,56 +1305,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends verbsListUpdateManyAndReturnArgs>(args: SelectSubset<T, verbsListUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends verbslistUpdateManyAndReturnArgs>(args: SelectSubset<T, verbslistUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one VerbsList.
-     * @param {verbsListUpsertArgs} args - Arguments to update or create a VerbsList.
+     * Create or update one Verbslist.
+     * @param {verbslistUpsertArgs} args - Arguments to update or create a Verbslist.
      * @example
-     * // Update or create a VerbsList
-     * const verbsList = await prisma.verbsList.upsert({
+     * // Update or create a Verbslist
+     * const verbslist = await prisma.verbslist.upsert({
      *   create: {
-     *     // ... data to create a VerbsList
+     *     // ... data to create a Verbslist
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the VerbsList we want to update
+     *     // ... the filter for the Verbslist we want to update
      *   }
      * })
      */
-    upsert<T extends verbsListUpsertArgs>(args: SelectSubset<T, verbsListUpsertArgs<ExtArgs>>): Prisma__verbsListClient<$Result.GetResult<Prisma.$verbsListPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends verbslistUpsertArgs>(args: SelectSubset<T, verbslistUpsertArgs<ExtArgs>>): Prisma__verbslistClient<$Result.GetResult<Prisma.$verbslistPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of VerbsLists.
+     * Count the number of Verbslists.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {verbsListCountArgs} args - Arguments to filter VerbsLists to count.
+     * @param {verbslistCountArgs} args - Arguments to filter Verbslists to count.
      * @example
-     * // Count the number of VerbsLists
-     * const count = await prisma.verbsList.count({
+     * // Count the number of Verbslists
+     * const count = await prisma.verbslist.count({
      *   where: {
-     *     // ... the filter for the VerbsLists we want to count
+     *     // ... the filter for the Verbslists we want to count
      *   }
      * })
     **/
-    count<T extends verbsListCountArgs>(
-      args?: Subset<T, verbsListCountArgs>,
+    count<T extends verbslistCountArgs>(
+      args?: Subset<T, verbslistCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], VerbsListCountAggregateOutputType>
+          : GetScalarType<T['select'], VerbslistCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a VerbsList.
+     * Allows you to perform aggregations operations on a Verbslist.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {VerbsListAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {VerbslistAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -1374,13 +1374,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends VerbsListAggregateArgs>(args: Subset<T, VerbsListAggregateArgs>): Prisma.PrismaPromise<GetVerbsListAggregateType<T>>
+    aggregate<T extends VerbslistAggregateArgs>(args: Subset<T, VerbslistAggregateArgs>): Prisma.PrismaPromise<GetVerbslistAggregateType<T>>
 
     /**
-     * Group by VerbsList.
+     * Group by Verbslist.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {verbsListGroupByArgs} args - Group by arguments.
+     * @param {verbslistGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -1395,14 +1395,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends verbsListGroupByArgs,
+      T extends verbslistGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: verbsListGroupByArgs['orderBy'] }
-        : { orderBy?: verbsListGroupByArgs['orderBy'] },
+        ? { orderBy: verbslistGroupByArgs['orderBy'] }
+        : { orderBy?: verbslistGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -1451,20 +1451,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, verbsListGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetVerbsListGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, verbslistGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetVerbslistGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the verbsList model
+   * Fields of the verbslist model
    */
-  readonly fields: verbsListFieldRefs;
+  readonly fields: verbslistFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for verbsList.
+   * The delegate class that acts as a "Promise-like" for verbslist.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__verbsListClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__verbslistClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1492,375 +1492,375 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the verbsList model
+   * Fields of the verbslist model
    */
-  interface verbsListFieldRefs {
-    readonly id: FieldRef<"verbsList", 'Int'>
-    readonly verbs: FieldRef<"verbsList", 'Json'>
-    readonly oldVerbs: FieldRef<"verbsList", 'Json'>
+  interface verbslistFieldRefs {
+    readonly id: FieldRef<"verbslist", 'Int'>
+    readonly verbs: FieldRef<"verbslist", 'Json'>
+    readonly oldverbs: FieldRef<"verbslist", 'Json'>
   }
     
 
   // Custom InputTypes
   /**
-   * verbsList findUnique
+   * verbslist findUnique
    */
-  export type verbsListFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * Filter, which verbsList to fetch.
+     * Filter, which verbslist to fetch.
      */
-    where: verbsListWhereUniqueInput
+    where: verbslistWhereUniqueInput
   }
 
   /**
-   * verbsList findUniqueOrThrow
+   * verbslist findUniqueOrThrow
    */
-  export type verbsListFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * Filter, which verbsList to fetch.
+     * Filter, which verbslist to fetch.
      */
-    where: verbsListWhereUniqueInput
+    where: verbslistWhereUniqueInput
   }
 
   /**
-   * verbsList findFirst
+   * verbslist findFirst
    */
-  export type verbsListFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * Filter, which verbsList to fetch.
+     * Filter, which verbslist to fetch.
      */
-    where?: verbsListWhereInput
+    where?: verbslistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of verbsLists to fetch.
+     * Determine the order of verbslists to fetch.
      */
-    orderBy?: verbsListOrderByWithRelationInput | verbsListOrderByWithRelationInput[]
+    orderBy?: verbslistOrderByWithRelationInput | verbslistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for verbsLists.
+     * Sets the position for searching for verbslists.
      */
-    cursor?: verbsListWhereUniqueInput
+    cursor?: verbslistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` verbsLists from the position of the cursor.
+     * Take `±n` verbslists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` verbsLists.
+     * Skip the first `n` verbslists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of verbsLists.
+     * Filter by unique combinations of verbslists.
      */
-    distinct?: VerbsListScalarFieldEnum | VerbsListScalarFieldEnum[]
+    distinct?: VerbslistScalarFieldEnum | VerbslistScalarFieldEnum[]
   }
 
   /**
-   * verbsList findFirstOrThrow
+   * verbslist findFirstOrThrow
    */
-  export type verbsListFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * Filter, which verbsList to fetch.
+     * Filter, which verbslist to fetch.
      */
-    where?: verbsListWhereInput
+    where?: verbslistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of verbsLists to fetch.
+     * Determine the order of verbslists to fetch.
      */
-    orderBy?: verbsListOrderByWithRelationInput | verbsListOrderByWithRelationInput[]
+    orderBy?: verbslistOrderByWithRelationInput | verbslistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for verbsLists.
+     * Sets the position for searching for verbslists.
      */
-    cursor?: verbsListWhereUniqueInput
+    cursor?: verbslistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` verbsLists from the position of the cursor.
+     * Take `±n` verbslists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` verbsLists.
+     * Skip the first `n` verbslists.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of verbsLists.
+     * Filter by unique combinations of verbslists.
      */
-    distinct?: VerbsListScalarFieldEnum | VerbsListScalarFieldEnum[]
+    distinct?: VerbslistScalarFieldEnum | VerbslistScalarFieldEnum[]
   }
 
   /**
-   * verbsList findMany
+   * verbslist findMany
    */
-  export type verbsListFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * Filter, which verbsLists to fetch.
+     * Filter, which verbslists to fetch.
      */
-    where?: verbsListWhereInput
+    where?: verbslistWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of verbsLists to fetch.
+     * Determine the order of verbslists to fetch.
      */
-    orderBy?: verbsListOrderByWithRelationInput | verbsListOrderByWithRelationInput[]
+    orderBy?: verbslistOrderByWithRelationInput | verbslistOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing verbsLists.
+     * Sets the position for listing verbslists.
      */
-    cursor?: verbsListWhereUniqueInput
+    cursor?: verbslistWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` verbsLists from the position of the cursor.
+     * Take `±n` verbslists from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` verbsLists.
+     * Skip the first `n` verbslists.
      */
     skip?: number
-    distinct?: VerbsListScalarFieldEnum | VerbsListScalarFieldEnum[]
+    distinct?: VerbslistScalarFieldEnum | VerbslistScalarFieldEnum[]
   }
 
   /**
-   * verbsList create
+   * verbslist create
    */
-  export type verbsListCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * The data needed to create a verbsList.
+     * The data needed to create a verbslist.
      */
-    data?: XOR<verbsListCreateInput, verbsListUncheckedCreateInput>
+    data?: XOR<verbslistCreateInput, verbslistUncheckedCreateInput>
   }
 
   /**
-   * verbsList createMany
+   * verbslist createMany
    */
-  export type verbsListCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many verbsLists.
+     * The data used to create many verbslists.
      */
-    data: verbsListCreateManyInput | verbsListCreateManyInput[]
+    data: verbslistCreateManyInput | verbslistCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * verbsList createManyAndReturn
+   * verbslist createManyAndReturn
    */
-  export type verbsListCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelectCreateManyAndReturn<ExtArgs> | null
+    select?: verbslistSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * The data used to create many verbsLists.
+     * The data used to create many verbslists.
      */
-    data: verbsListCreateManyInput | verbsListCreateManyInput[]
+    data: verbslistCreateManyInput | verbslistCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * verbsList update
+   * verbslist update
    */
-  export type verbsListUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * The data needed to update a verbsList.
+     * The data needed to update a verbslist.
      */
-    data: XOR<verbsListUpdateInput, verbsListUncheckedUpdateInput>
+    data: XOR<verbslistUpdateInput, verbslistUncheckedUpdateInput>
     /**
-     * Choose, which verbsList to update.
+     * Choose, which verbslist to update.
      */
-    where: verbsListWhereUniqueInput
+    where: verbslistWhereUniqueInput
   }
 
   /**
-   * verbsList updateMany
+   * verbslist updateMany
    */
-  export type verbsListUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update verbsLists.
+     * The data used to update verbslists.
      */
-    data: XOR<verbsListUpdateManyMutationInput, verbsListUncheckedUpdateManyInput>
+    data: XOR<verbslistUpdateManyMutationInput, verbslistUncheckedUpdateManyInput>
     /**
-     * Filter which verbsLists to update
+     * Filter which verbslists to update
      */
-    where?: verbsListWhereInput
+    where?: verbslistWhereInput
     /**
-     * Limit how many verbsLists to update.
+     * Limit how many verbslists to update.
      */
     limit?: number
   }
 
   /**
-   * verbsList updateManyAndReturn
+   * verbslist updateManyAndReturn
    */
-  export type verbsListUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: verbslistSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * The data used to update verbsLists.
+     * The data used to update verbslists.
      */
-    data: XOR<verbsListUpdateManyMutationInput, verbsListUncheckedUpdateManyInput>
+    data: XOR<verbslistUpdateManyMutationInput, verbslistUncheckedUpdateManyInput>
     /**
-     * Filter which verbsLists to update
+     * Filter which verbslists to update
      */
-    where?: verbsListWhereInput
+    where?: verbslistWhereInput
     /**
-     * Limit how many verbsLists to update.
+     * Limit how many verbslists to update.
      */
     limit?: number
   }
 
   /**
-   * verbsList upsert
+   * verbslist upsert
    */
-  export type verbsListUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * The filter to search for the verbsList to update in case it exists.
+     * The filter to search for the verbslist to update in case it exists.
      */
-    where: verbsListWhereUniqueInput
+    where: verbslistWhereUniqueInput
     /**
-     * In case the verbsList found by the `where` argument doesn't exist, create a new verbsList with this data.
+     * In case the verbslist found by the `where` argument doesn't exist, create a new verbslist with this data.
      */
-    create: XOR<verbsListCreateInput, verbsListUncheckedCreateInput>
+    create: XOR<verbslistCreateInput, verbslistUncheckedCreateInput>
     /**
-     * In case the verbsList was found with the provided `where` argument, update it with this data.
+     * In case the verbslist was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<verbsListUpdateInput, verbsListUncheckedUpdateInput>
+    update: XOR<verbslistUpdateInput, verbslistUncheckedUpdateInput>
   }
 
   /**
-   * verbsList delete
+   * verbslist delete
    */
-  export type verbsListDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
     /**
-     * Filter which verbsList to delete.
+     * Filter which verbslist to delete.
      */
-    where: verbsListWhereUniqueInput
+    where: verbslistWhereUniqueInput
   }
 
   /**
-   * verbsList deleteMany
+   * verbslist deleteMany
    */
-  export type verbsListDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which verbsLists to delete
+     * Filter which verbslists to delete
      */
-    where?: verbsListWhereInput
+    where?: verbslistWhereInput
     /**
-     * Limit how many verbsLists to delete.
+     * Limit how many verbslists to delete.
      */
     limit?: number
   }
 
   /**
-   * verbsList without action
+   * verbslist without action
    */
-  export type verbsListDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type verbslistDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the verbsList
+     * Select specific fields to fetch from the verbslist
      */
-    select?: verbsListSelect<ExtArgs> | null
+    select?: verbslistSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the verbsList
+     * Omit specific fields from the verbslist
      */
-    omit?: verbsListOmit<ExtArgs> | null
+    omit?: verbslistOmit<ExtArgs> | null
   }
 
 
@@ -1878,13 +1878,13 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-  export const VerbsListScalarFieldEnum: {
+  export const VerbslistScalarFieldEnum: {
     id: 'id',
     verbs: 'verbs',
-    oldVerbs: 'oldVerbs'
+    oldverbs: 'oldverbs'
   };
 
-  export type VerbsListScalarFieldEnum = (typeof VerbsListScalarFieldEnum)[keyof typeof VerbsListScalarFieldEnum]
+  export type VerbslistScalarFieldEnum = (typeof VerbslistScalarFieldEnum)[keyof typeof VerbslistScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -1976,87 +1976,87 @@ export namespace Prisma {
    */
 
 
-  export type verbsListWhereInput = {
-    AND?: verbsListWhereInput | verbsListWhereInput[]
-    OR?: verbsListWhereInput[]
-    NOT?: verbsListWhereInput | verbsListWhereInput[]
-    id?: IntFilter<"verbsList"> | number
-    verbs?: JsonFilter<"verbsList">
-    oldVerbs?: JsonFilter<"verbsList">
+  export type verbslistWhereInput = {
+    AND?: verbslistWhereInput | verbslistWhereInput[]
+    OR?: verbslistWhereInput[]
+    NOT?: verbslistWhereInput | verbslistWhereInput[]
+    id?: IntFilter<"verbslist"> | number
+    verbs?: JsonFilter<"verbslist">
+    oldverbs?: JsonFilter<"verbslist">
   }
 
-  export type verbsListOrderByWithRelationInput = {
+  export type verbslistOrderByWithRelationInput = {
     id?: SortOrder
     verbs?: SortOrder
-    oldVerbs?: SortOrder
+    oldverbs?: SortOrder
   }
 
-  export type verbsListWhereUniqueInput = Prisma.AtLeast<{
+  export type verbslistWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    AND?: verbsListWhereInput | verbsListWhereInput[]
-    OR?: verbsListWhereInput[]
-    NOT?: verbsListWhereInput | verbsListWhereInput[]
-    verbs?: JsonFilter<"verbsList">
-    oldVerbs?: JsonFilter<"verbsList">
+    AND?: verbslistWhereInput | verbslistWhereInput[]
+    OR?: verbslistWhereInput[]
+    NOT?: verbslistWhereInput | verbslistWhereInput[]
+    verbs?: JsonFilter<"verbslist">
+    oldverbs?: JsonFilter<"verbslist">
   }, "id">
 
-  export type verbsListOrderByWithAggregationInput = {
+  export type verbslistOrderByWithAggregationInput = {
     id?: SortOrder
     verbs?: SortOrder
-    oldVerbs?: SortOrder
-    _count?: verbsListCountOrderByAggregateInput
-    _avg?: verbsListAvgOrderByAggregateInput
-    _max?: verbsListMaxOrderByAggregateInput
-    _min?: verbsListMinOrderByAggregateInput
-    _sum?: verbsListSumOrderByAggregateInput
+    oldverbs?: SortOrder
+    _count?: verbslistCountOrderByAggregateInput
+    _avg?: verbslistAvgOrderByAggregateInput
+    _max?: verbslistMaxOrderByAggregateInput
+    _min?: verbslistMinOrderByAggregateInput
+    _sum?: verbslistSumOrderByAggregateInput
   }
 
-  export type verbsListScalarWhereWithAggregatesInput = {
-    AND?: verbsListScalarWhereWithAggregatesInput | verbsListScalarWhereWithAggregatesInput[]
-    OR?: verbsListScalarWhereWithAggregatesInput[]
-    NOT?: verbsListScalarWhereWithAggregatesInput | verbsListScalarWhereWithAggregatesInput[]
-    id?: IntWithAggregatesFilter<"verbsList"> | number
-    verbs?: JsonWithAggregatesFilter<"verbsList">
-    oldVerbs?: JsonWithAggregatesFilter<"verbsList">
+  export type verbslistScalarWhereWithAggregatesInput = {
+    AND?: verbslistScalarWhereWithAggregatesInput | verbslistScalarWhereWithAggregatesInput[]
+    OR?: verbslistScalarWhereWithAggregatesInput[]
+    NOT?: verbslistScalarWhereWithAggregatesInput | verbslistScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"verbslist"> | number
+    verbs?: JsonWithAggregatesFilter<"verbslist">
+    oldverbs?: JsonWithAggregatesFilter<"verbslist">
   }
 
-  export type verbsListCreateInput = {
+  export type verbslistCreateInput = {
     verbs?: JsonNullValueInput | InputJsonValue
-    oldVerbs?: JsonNullValueInput | InputJsonValue
+    oldverbs?: JsonNullValueInput | InputJsonValue
   }
 
-  export type verbsListUncheckedCreateInput = {
+  export type verbslistUncheckedCreateInput = {
     id?: number
     verbs?: JsonNullValueInput | InputJsonValue
-    oldVerbs?: JsonNullValueInput | InputJsonValue
+    oldverbs?: JsonNullValueInput | InputJsonValue
   }
 
-  export type verbsListUpdateInput = {
+  export type verbslistUpdateInput = {
     verbs?: JsonNullValueInput | InputJsonValue
-    oldVerbs?: JsonNullValueInput | InputJsonValue
+    oldverbs?: JsonNullValueInput | InputJsonValue
   }
 
-  export type verbsListUncheckedUpdateInput = {
+  export type verbslistUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     verbs?: JsonNullValueInput | InputJsonValue
-    oldVerbs?: JsonNullValueInput | InputJsonValue
+    oldverbs?: JsonNullValueInput | InputJsonValue
   }
 
-  export type verbsListCreateManyInput = {
+  export type verbslistCreateManyInput = {
     id?: number
     verbs?: JsonNullValueInput | InputJsonValue
-    oldVerbs?: JsonNullValueInput | InputJsonValue
+    oldverbs?: JsonNullValueInput | InputJsonValue
   }
 
-  export type verbsListUpdateManyMutationInput = {
+  export type verbslistUpdateManyMutationInput = {
     verbs?: JsonNullValueInput | InputJsonValue
-    oldVerbs?: JsonNullValueInput | InputJsonValue
+    oldverbs?: JsonNullValueInput | InputJsonValue
   }
 
-  export type verbsListUncheckedUpdateManyInput = {
+  export type verbslistUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     verbs?: JsonNullValueInput | InputJsonValue
-    oldVerbs?: JsonNullValueInput | InputJsonValue
+    oldverbs?: JsonNullValueInput | InputJsonValue
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -2093,25 +2093,25 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
-  export type verbsListCountOrderByAggregateInput = {
+  export type verbslistCountOrderByAggregateInput = {
     id?: SortOrder
     verbs?: SortOrder
-    oldVerbs?: SortOrder
+    oldverbs?: SortOrder
   }
 
-  export type verbsListAvgOrderByAggregateInput = {
+  export type verbslistAvgOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type verbsListMaxOrderByAggregateInput = {
+  export type verbslistMaxOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type verbsListMinOrderByAggregateInput = {
+  export type verbslistMinOrderByAggregateInput = {
     id?: SortOrder
   }
 
-  export type verbsListSumOrderByAggregateInput = {
+  export type verbslistSumOrderByAggregateInput = {
     id?: SortOrder
   }
 

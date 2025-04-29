@@ -120,10 +120,10 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.VerbsListScalarFieldEnum = {
+exports.Prisma.VerbslistScalarFieldEnum = {
   id: 'id',
   verbs: 'verbs',
-  oldVerbs: 'oldVerbs'
+  oldverbs: 'oldverbs'
 };
 
 exports.Prisma.SortOrder = {
@@ -148,7 +148,7 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  verbsList: 'verbsList'
+  verbslist: 'verbslist'
 };
 
 /**
