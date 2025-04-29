@@ -1,26 +1,9 @@
-"use client";
+export const metadata = {
+  title: 'Dagens Verb',
+};
 
-import { useEffect, useState } from 'react';
-import { fetchVerb } from '../utils/fetchVerb';
+import ClientHome from './ClientHome';
 
-export default function Home() {
-  const [verb, setVerb] = useState('');
-
-
-  useEffect(() => {
-    const getVerb = async () => {
-      const fetchedVerb = await fetchVerb();
-      setVerb(fetchedVerb);
-    };
-
-    getVerb();
-  }, []);
-
-  return (
-    <main className="flex items-center justify-center h-screen bg-blue-400">
-      <div className="text-8xl mb-90">
-        {verb}
-      </div>
-    </main>
-  );
+export default function Page() {
+  return <ClientHome />;
 }

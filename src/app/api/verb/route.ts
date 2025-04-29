@@ -10,7 +10,6 @@ let verbJSON = {
 }
 export async function GET(request: NextRequest) {
   try {
-    console.log(verbJSON)
     return NextResponse.json(verbJSON, { status: 200 });
   } catch (error) {
     console.error('Error reading verbs.json:', error);

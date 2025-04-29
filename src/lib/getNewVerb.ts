@@ -4,9 +4,7 @@ const prisma = new PrismaClient()
 
 export async function getRandomVerb() {
     const today = new Date()
-    console.log("Today:", today)
     const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate())
-    console.log("Start of day:", startOfDay)
 
     const alreadyChosen = await prisma.verbToday.findUnique({
         where: { date: startOfDay }
