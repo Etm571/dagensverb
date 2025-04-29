@@ -47,11 +47,10 @@ Dagens Verb is a web application that displays a new verb every day to help user
 
 ## Installation (With Docker Compose)
 
-1. Clone the repository and switch to the docker-compose branch:
+1. Clone the repository:
     ```bash
     git clone https://github.com/etm571/dagensverb2.0.git
     cd dagensverb2.0
-    git checkout docker-compose
     ```
 
 2. Start the development server:
@@ -60,6 +59,12 @@ Dagens Verb is a web application that displays a new verb every day to help user
     ```
 
 3. Open your browser and navigate to `http://localhost:3000`.
+
+**Important:**When rebooting the container, please remove the old container storage before booting it up again:
+
+    ```bash
+    docker-compose down -v
+    ```
 
 
 ## Scripts
