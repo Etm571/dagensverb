@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-bookworm
+    container_name: postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  app:
+    build: .
+    container_name: app
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://user:password@postgres:5432/mydb
+    depends_on:
+      - postgres
+    networks:
+      - app-network
+    volumes:
+      - type: bind
+        source: ./
+        target: /app
+      - type: volume
+        source: app-node-modules
+        target: /app/node_modules
+
+volumes:
+  postgres-data:
+  app-node-modules:
+
+networks:
+  app-network:
+    driver: bridge
