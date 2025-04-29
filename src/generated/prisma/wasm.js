@@ -120,25 +120,25 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.VerbslistScalarFieldEnum = {
+exports.Prisma.VerbScalarFieldEnum = {
   id: 'id',
-  verbs: 'verbs',
-  oldverbs: 'oldverbs'
+  name: 'name'
+};
+
+exports.Prisma.OldVerbScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
+};
+
+exports.Prisma.VerbTodayScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  date: 'date'
 };
 
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
-};
-
-exports.Prisma.JsonNullValueInput = {
-  JsonNull: Prisma.JsonNull
-};
-
-exports.Prisma.JsonNullValueFilter = {
-  DbNull: Prisma.DbNull,
-  JsonNull: Prisma.JsonNull,
-  AnyNull: Prisma.AnyNull
 };
 
 exports.Prisma.QueryMode = {
@@ -148,7 +148,9 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  verbslist: 'verbslist'
+  Verb: 'Verb',
+  OldVerb: 'OldVerb',
+  VerbToday: 'VerbToday'
 };
 
 /**

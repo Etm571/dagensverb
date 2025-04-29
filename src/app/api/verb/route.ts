@@ -1,6 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { getRandomVerb } from '../../../lib/getNewVerb';
-import cron from 'node-cron';
 
 
 
@@ -9,20 +8,6 @@ let verb = await getRandomVerb();
 let verbJSON = {
   verb: verb,
 }
-
-
-cron.schedule('0 0 * * *', async () => {
-  try {
-    verb = await getRandomVerb();
-    verbJSON = {
-      verb: verb,
-    }
-
-  } catch (error) {
-    console.error('Error fetching random verb at midnight:', error);
-  }
-});
-
 export async function GET(request: NextRequest) {
   try {
     console.log(verbJSON)

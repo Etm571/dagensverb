@@ -1,30 +1,32 @@
-import { PrismaClient } from './../generated/prisma';
-const prisma = new PrismaClient();
+import { PrismaClient } from '../generated/prisma';
 
-async function getRandomVerb() {
-    const verbsList = await prisma.verbslist.findMany();
-    const allVerbs = verbsList.map(list => list.verbs).flat();
-    const oldVerbs = verbsList.map(list => list.oldverbs).flat();
+const prisma = new PrismaClient()
 
-    var randomVerbTry = allVerbs[Math.floor(Math.random() * allVerbs.length)];
+export async function getRandomVerb() {
+    const today = new Date()
+    console.log("Today:", today)
+    const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate())
+    console.log("Start of day:", startOfDay)
 
-    while (oldVerbs.includes(randomVerbTry)) {
-        randomVerbTry = allVerbs[Math.floor(Math.random() * allVerbs.length)];
-    }
-    const randomVerb = randomVerbTry;
+    const alreadyChosen = await prisma.verbToday.findUnique({
+        where: { date: startOfDay }
+    })
 
+    if (alreadyChosen) return alreadyChosen.name;
 
-    oldVerbs.push(randomVerb);
+    const verb = await prisma.verb.findFirst()
 
-    await prisma.verbslist.update({
-        where: { id: verbsList[0].id },
+    if (!verb) throw new Error("No verbs found in the database")
+
+    await prisma.oldVerb.create({ data: { name: verb.name } })
+    await prisma.verb.delete({ where: { id: verb.id } })
+
+    await prisma.verbToday.create({
         data: {
-            oldverbs: oldVerbs,
-        },
-    });
+            name: verb.name,
+            date: startOfDay,
+        }
+    })
 
-    console.log('Random verb:', randomVerb);
-    return randomVerb;
+    return verb.name
 }
-
-export { getRandomVerb };
