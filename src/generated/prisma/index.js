@@ -136,7 +136,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/bosse/Desktop/code/web/dagensverb2.0/src/generated/prisma",
+      "value": "/app/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -147,10 +147,14 @@ const config = {
         "fromEnvVar": null,
         "value": "debian-openssl-3.0.x",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "linux-musl-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/bosse/Desktop/code/web/dagensverb2.0/prisma/schema.prisma",
+    "sourceFilePath": "/app/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -168,12 +172,12 @@ const config = {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": "postgres://avnadmin:AVNS_YGa1FdUF3CbhmlPVN1K@pg-3302891f-dagensverb.l.aivencloud.com:24264/defaultdb?sslmode=require"
+        "value": "postgresql://user:password@postgres:5432/mydb"
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Verb {\n  id   Int    @id @default(autoincrement())\n  name String @unique\n}\n\nmodel OldVerb {\n  id   Int    @id @default(autoincrement())\n  name String @unique\n}\n\nmodel VerbToday {\n  id   Int      @id @default(autoincrement())\n  name String\n  date DateTime @unique\n}\n",
-  "inlineSchemaHash": "cb4fb6703cf5f05b5bba94b9cb2e34aa8f05379ec662e07904533385cd4ca35e",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider      = \"prisma-client-js\"\n  output        = \"../src/generated/prisma\"\n  binaryTargets = [\"native\", \"linux-musl-openssl-3.0.x\"]\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Verb {\n  id   Int    @id @default(autoincrement())\n  name String @unique\n}\n\nmodel OldVerb {\n  id   Int    @id @default(autoincrement())\n  name String @unique\n}\n\nmodel VerbToday {\n  id   Int      @id @default(autoincrement())\n  name String\n  date DateTime @unique\n}\n",
+  "inlineSchemaHash": "df6331c8784d29f66589afa93b40e4e97d6d21dd7ed7d9db9a49052e68416a51",
   "copyEngine": true
 }
 
@@ -214,6 +218,10 @@ Object.assign(exports, Prisma)
 // file annotations for bundling tools to include these files
 path.join(__dirname, "libquery_engine-debian-openssl-3.0.x.so.node");
 path.join(process.cwd(), "src/generated/prisma/libquery_engine-debian-openssl-3.0.x.so.node")
+
+// file annotations for bundling tools to include these files
+path.join(__dirname, "libquery_engine-linux-musl-openssl-3.0.x.so.node");
+path.join(process.cwd(), "src/generated/prisma/libquery_engine-linux-musl-openssl-3.0.x.so.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "src/generated/prisma/schema.prisma")

@@ -14,7 +14,9 @@ Dagens Verb is a web application that displays a new verb every day to help user
 - **Language**: TypeScript
 - **Database**: Prisma ORM with PostgreSQL
 
-## Installation
+## Installation (Without Docker Compose)
+
+This 
 
 1. Clone the repository:
     ```bash
@@ -44,6 +46,25 @@ Dagens Verb is a web application that displays a new verb every day to help user
     ```
 
 5. Open your browser and navigate to `http://localhost:3000`.
+
+## Installation (With Docker Compose)
+
+This 
+
+1. Clone the repository and switch to the docker-compose branch:
+    ```bash
+    git clone https://github.com/etm571/dagensverb2.0.git
+    cd dagensverb2.0
+    git checkout docker-compose
+    ```
+
+2. Start the development server:
+    ```bash
+    docker-compose up --build
+    ```
+
+3. Open your browser and navigate to `http://localhost:3000`.
+
 
 ## Scripts
 
