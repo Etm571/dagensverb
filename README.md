@@ -53,7 +53,7 @@ This
 
 1. Clone the repository and switch to the docker-compose branch:
     ```bash
-    git clone https://github.com/yourusername/dagensverb2.0.git
+    git clone https://github.com/etm571/dagensverb2.0.git
     cd dagensverb2.0
     git checkout docker-compose
     ```
