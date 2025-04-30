@@ -18,7 +18,7 @@ Dagens Verb is a web application that displays a new verb every day to help user
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/dagensverb2.0.git
+    git clone https://github.com/etm571/dagensverb2.0.git
     cd dagensverb2.0
     ```
 
