@@ -22,6 +22,15 @@ Dagens Verb is a web application that displays a new verb every day to help user
     cd dagensverb2.0
     ```
 
+2. Set up your `.env` file with your database credentials
+   - Example configuration for a local Postgres installation with username "username" and password "password".
+
+    ```bash
+    DATABASE_URL="postgresql://username:password@localhost:5432/dagensverb"
+    
+    ```
+   
+
 2. Install dependencies:
     ```bash
     npm install
@@ -33,7 +42,7 @@ Dagens Verb is a web application that displays a new verb every day to help user
       ```bash
       npx prisma migrate dev
       ```
-    - The database will be seeded automaticly with some Swedish verbs. If you want to skip the seeding process, use the following command instead:
+    - The database will be seeded automaticly with some Swedish verbs. If you want to skip the seeding process(not recommended), use the following command instead:
       ```bash
       npx prisma migrate dev --skip-seed
       ```
@@ -62,10 +71,8 @@ Dagens Verb is a web application that displays a new verb every day to help user
 
 **Important:** When rebooting the container, please remove the old container storage before booting it up again:
 
-    ```bash
     docker-compose down -v
-    ```
-
+   
 
 ## Scripts
 
