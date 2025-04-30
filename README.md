@@ -23,7 +23,7 @@ Dagens Verb is a web application that displays a new verb every day to help user
     ```
 
 2. Set up your `.env` file with your database credentials
-   Example configuration for a local Postgres installation with username "username" and password "password".
+   - Example configuration for a local Postgres installation with username "username" and password "password".
 
     ```bash
     DATABASE_URL="postgresql://username:password@localhost:5432/dagensverb"
