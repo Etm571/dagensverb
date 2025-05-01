@@ -37,3 +37,10 @@ model VerbRequest {
   name      String
   date     DateTime @unique
 }
+
+model FAQ {
+  id        Int     @id @default(autoincrement())
+  question  String  @unique
+  answer    String
+  createdAt DateTime @default(now())
+}
