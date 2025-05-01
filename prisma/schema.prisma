@@ -31,3 +31,9 @@ model VerbToday {
   name      String
   date     DateTime @unique
 }
+
+model VerbRequest {
+  id        Int      @id @default(autoincrement())
+  name      String
+  date     DateTime @unique
+}

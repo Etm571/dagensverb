@@ -21,6 +21,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "@types/luxon": "^3.6.2",
     "@types/node": "^20",
     "@types/node-cron": "^3.0.11",
     "@types/react": "^19",
@@ -33,6 +34,5 @@
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
-
   }
 }
