@@ -15,7 +15,7 @@
 
 #prisma
 
-generated/prisma/
+/src/generated/prisma/
 
 
 # next.js
