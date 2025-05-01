@@ -1,6 +1,6 @@
 # Dagens Verb 2.0
 
-Dagens Verb is a web application that displays a new verb every day to help users expand their vocabulary. The app is built using **Next.js**, **TypeScript**, and **Prisma ORM** for a modern and efficient development experience.
+Dagens Verb is a web application inspired by "Dagens sak"(https://dagenssak.se) that displays a new verb every day to help users expand their vocabulary. The app is built using **Next.js**, **TypeScript**, and **Prisma ORM** for a modern and efficient development experience.
 
 ## Features
 
