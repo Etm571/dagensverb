@@ -1,38 +1,37 @@
-import { PrismaAdapter } from "@auth/prisma-adapter"
-import { getServerSession } from "next-auth"
-import { NextAuthOptions } from "next-auth"
-import Credentials from "next-auth/providers/credentials"
-import { prisma } from "@/lib/prisma"
+import { PrismaAdapter } from "@auth/prisma-adapter";
+import { getServerSession } from "next-auth";
+import { NextAuthOptions } from "next-auth";
+import Credentials from "next-auth/providers/credentials";
+import { prisma } from "@/lib/prisma";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
   session: {
-    strategy: "jwt"
+    strategy: "jwt",
   },
   providers: [
     Credentials({
       name: "Credentials",
       credentials: {
         username: { label: "Username", type: "text" },
-        password: { label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
         if (
           credentials?.username === process.env.ADMIN_USER &&
           credentials?.password === process.env.ADMIN_PASS
-          
         ) {
-          return { id: "1", name: "Admin" }
+          return { id: "1", name: "Admin" };
         }
-        return null
-      }
-    })
+        return null;
+      },
+    }),
   ],
   pages: {
-    signIn: "/login"
-  }
-}
+    signIn: "/login",
+  },
+};
 
 export function auth() {
-  return getServerSession(authOptions)
+  return getServerSession(authOptions);
 }
