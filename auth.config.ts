@@ -17,8 +17,6 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials) {
-        console.log("USER:", credentials?.username, "PASS:", credentials?.password)
-
         if (
           credentials?.username === process.env.ADMIN_USER &&
           credentials?.password === process.env.ADMIN_PASS
