@@ -6,31 +6,41 @@ export default function VerbRequestField() {
   const [inputValue, setInputValue] = useState("");
   const [message, setMessage] = useState("");
   const [fadeOut, setFadeOut] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
     if (inputValue.trim() === "") return;
 
     const fetchAndSetMessage = async () => {
-      const data = await fetchFAQ(inputValue);
-      setMessage(data);
+      const data: any = await fetchFAQ(inputValue);
+      setMessage(data.message);
+      setIsDisabled(data.accepted);
     };
 
     fetchAndSetMessage();
   }, [inputValue]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+    setIsTyping(true);
+  };
 
   const handleSubmit = async () => {
     if (inputValue.trim() !== "") {
       await postVerb(inputValue);
       setMessage("Tack!");
       setInputValue("");
-      setFadeOut(false);
+      setIsTyping(false);
 
       setTimeout(() => {
-        setFadeOut(true);
-      }, 1500);
-
-      setTimeout(() => {
-        setMessage("");
+        if (!isTyping) {
+          setFadeOut(true);
+          setTimeout(() => {
+            setMessage("");
+            setFadeOut(false);
+          }, 500);
+        }
       }, 2500);
     }
   };
@@ -52,13 +62,15 @@ export default function VerbRequestField() {
         <input
           type="text"
           value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          onChange={handleInputChange}
           placeholder="Föreslå ett nytt verb"
           className="text-center border-2 border-gray-300 rounded-lg w-40 h-10"
         />
         <button
           onClick={handleSubmit}
-          className="bg-blue-500 text-white px-4 h-10 rounded-lg ml-2 hover:bg-blue-600 transition duration-300 ease-in-out"
+          disabled={!isDisabled}
+          className={`px-4 h-10 rounded-lg ml-2 transition duration-300 ease-in-out 
+            ${!isDisabled ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600 text-white"}`}
         >
           Skicka
         </button>

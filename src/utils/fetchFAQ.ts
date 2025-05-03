@@ -12,7 +12,7 @@ export const fetchFAQ = async (question: string): Promise<string> => {
     }
 
     const data = await response.json();
-    return data.message || "";
+    return data || "";
     //todo: add check for if verb already exists in queue
     // Verbet finns redan i kön.
   } catch (error) {
