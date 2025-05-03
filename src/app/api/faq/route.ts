@@ -22,15 +22,13 @@ export async function GET(request: Request) {
     });
 
     if (faqs.length === 0) {
-      return NextResponse.json({ status: 204 });
+      return NextResponse.json({ status: 200, accepted: "true" });
     }
 
     const answer = faqs[0].answer;
-    const answerJSON = {
-      answer: answer,
-    }
 
-    return NextResponse.json(answerJSON);
+
+    return NextResponse.json({ message: answer, status: 200, accepted: "false" });
   } catch (error) {
     console.error('Error searching FAQs:', error);
     return NextResponse.json(

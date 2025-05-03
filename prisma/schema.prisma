@@ -23,7 +23,7 @@ model Verb {
 
 model OldVerb {
   id    Int    @id @default(autoincrement())
-  name  String @unique
+  name  String
 }
 
 model VerbToday {

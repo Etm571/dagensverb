@@ -1,32 +1,28 @@
-import { useState, useEffect } from 'react';
-import { postVerb } from '@/utils/postVerb';
-import { fetchFAQ } from '@/utils/fetchFAQ';
-
+import { useState, useEffect } from "react";
+import { postVerb } from "@/utils/postVerb";
+import { fetchFAQ } from "@/utils/fetchFAQ";
 
 export default function VerbRequestField() {
-  const [inputValue, setInputValue] = useState('');
-  const [message, setMessage] = useState('');
+  const [inputValue, setInputValue] = useState("");
+  const [message, setMessage] = useState("");
   const [fadeOut, setFadeOut] = useState(false);
 
-
   useEffect(() => {
-    if (inputValue.trim() === '') return;
-  
+    if (inputValue.trim() === "") return;
+
     const fetchAndSetMessage = async () => {
       const data = await fetchFAQ(inputValue);
       setMessage(data);
     };
-  
+
     fetchAndSetMessage();
   }, [inputValue]);
-  
-
 
   const handleSubmit = async () => {
-    if (inputValue.trim() !== '') {
+    if (inputValue.trim() !== "") {
       await postVerb(inputValue);
-      setMessage('Tack!');
-      setInputValue('');
+      setMessage("Tack!");
+      setInputValue("");
       setFadeOut(false);
 
       setTimeout(() => {
@@ -34,7 +30,7 @@ export default function VerbRequestField() {
       }, 1500);
 
       setTimeout(() => {
-        setMessage('');
+        setMessage("");
       }, 2500);
     }
   };
@@ -44,9 +40,9 @@ export default function VerbRequestField() {
       {message && (
         <div
           className={`absolute mb-4 text-center bg-green-200 text-green-800 p-2 rounded-lg w-63 transition-opacity duration-500 ${
-            fadeOut ? 'opacity-0' : 'opacity-100'
+            fadeOut ? "opacity-0" : "opacity-100"
           }`}
-          style={{ top: '-60px' }}
+          style={{ top: "-60px" }}
         >
           <div className="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[8px] border-r-[8px] border-t-[8px] border-t-green-200 border-l-transparent border-r-transparent"></div>
           {message}
