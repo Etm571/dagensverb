@@ -26,7 +26,7 @@ export async function getRandomVerb() {
 
   if (!verb) throw new Error("No verbs found in the database");
 
-  await handleVerbSelection(
+  return await handleVerbSelection(
     verb.name,
     verb.id,
     verbCount > 0 ? "verbRequest" : "verb",
@@ -51,5 +51,7 @@ async function handleVerbSelection(
   await prisma.verbToday.create({
     data: { name, date },
   });
+
+  return name;
 
 }
