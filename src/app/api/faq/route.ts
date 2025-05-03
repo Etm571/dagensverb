@@ -8,7 +8,6 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get('q') || '';
-    console.log('Search query:', query);
 
     const faqs = await prisma.fAQ.findMany({
       where: {
@@ -21,6 +20,10 @@ export async function GET(request: Request) {
         createdAt: 'desc',
       },
     });
+
+    if (faqs.length === 0) {
+      return NextResponse.json({ status: 204 });
+    }
 
     const answer = faqs[0].answer;
     const answerJSON = {
