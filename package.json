@@ -11,6 +11,8 @@
     "seed": "ts-node --compiler-options '{\"module\":\"CommonJS\"}' prisma/seed.ts"
   },
   "dependencies": {
+    
+    "@tailwindcss/postcss": "^4",
     "@auth/prisma-adapter": "^2.9.0",
     "@prisma/client": "^6.7.0",
     "eslint": "^9.25.1",
