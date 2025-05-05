@@ -25,7 +25,7 @@ Dagens Verb is a web application inspired by "Dagens sak"(https://dagenssak.se) 
 
 2. Set up your `.env` files with your database credentials and credentials
    
-   - Example configuration for a local Postgres installation with username "username" and password "password".
+   - Example configuration for a local Postgres installation with username "`username`" and password "`password`".
      
      ```bash
      #.env:
@@ -56,7 +56,11 @@ npm install
 ```
 
 4. Set up the database:
-- Configure your `.env` file with the PostgreSQL database connection string.
+- Generate the Prisma Client:
+
+- ```bash
+  npx prisma generate
+  ```
 
 - Run Prisma migrations:
   
@@ -76,6 +80,8 @@ npm run dev
 ```
 
 6. Open your browser and navigate to `http://localhost:3000`.
+
+---
 
 ## Installation (With Docker Compose, not up-to-date)
 
@@ -98,12 +104,22 @@ npm run dev
 
     docker-compose down -v
 
+---
+
 ## Scripts
 
 - `npm run dev`: Start the development server.
 - `npm run build`: Build the application for production.
 - `npm start`: Start the production server.
 - `npx prisma studio`: Open Prisma Studio to manage your database.
+
+## Todo
+
+1. Various frontend fixes.
+
+2. Expand the functionality of the admin panel. The ability to see the upcoming verbs, override the queue, creating subadmins and more...
+
+3. Better error handling and correct status codes.
 
 ## Contributing
 
