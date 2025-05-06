@@ -29,9 +29,7 @@ export async function GET(request: Request) {
         date: "desc",
       },
     });
-
-    console.log("dagensVerb", dagensVerb);
-
+    
     if (query === dagensVerb?.name) {
       return NextResponse.json(
         { message: "Japp, det är dagens verb!", accepted: false },
@@ -52,10 +50,8 @@ export async function GET(request: Request) {
         );
       }
 
-
       return NextResponse.json({ status: 200, accepted: true });
     }
-
 
     const answer = faqs[0].answer;
     return NextResponse.json(

@@ -8,18 +8,26 @@ export default function VerbRequestField() {
   const [fadeOut, setFadeOut] = useState(false);
   const [isDisabled, setIsDisabled] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
+  const [tackMessage, setTackMessage] = useState(false);
 
   useEffect(() => {
-    if (inputValue.trim() === "") return;
-
+    if (inputValue.trim() === "") {
+      if (!tackMessage) {
+        setMessage("");
+      }
+      setIsDisabled(false);
+      return;
+    }
+  
     const fetchAndSetMessage = async () => {
       const data: any = await fetchFAQ(inputValue);
       setMessage(data.message);
       setIsDisabled(data.accepted);
     };
-
+  
     fetchAndSetMessage();
-  }, [inputValue]);
+  }, [inputValue, tackMessage]);
+  
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -29,21 +37,24 @@ export default function VerbRequestField() {
   const handleSubmit = async () => {
     if (inputValue.trim() !== "") {
       await postVerb(inputValue);
+      setTackMessage(true);
       setMessage("Tack!");
-      setInputValue("");
       setIsTyping(false);
-
+  
       setTimeout(() => {
-        if (!isTyping) {
-          setFadeOut(true);
-          setTimeout(() => {
-            setMessage("");
-            setFadeOut(false);
-          }, 500);
-        }
+        setFadeOut(true);
+        setTimeout(() => {
+          setMessage("");
+          setFadeOut(false);
+          setTackMessage(false);
+        }, 500);
       }, 2500);
+  
+      setInputValue(""); // ← flyttad efter timeout-start
     }
   };
+  
+  
 
   return (
     <div className="relative flex flex-col items-center">
