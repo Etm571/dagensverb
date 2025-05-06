@@ -1,7 +1,5 @@
 "use client";
 
-
-
 import { useEffect, useState } from "react";
 
 
@@ -10,16 +8,18 @@ export default function FAQAdminPage() {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState("");
+
+  
   
 
   useEffect(() => {
-    fetch("/api/faq/admin")
+    fetch("/api/admin/faq")
       .then((res) => res.json())
       .then(setFaqs);
   }, []);
 
   const createFAQ = async () => {
-    const res = await fetch("/api/faq/admin", {
+    const res = await fetch("/api/admin/faq", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question, answer }),
@@ -41,7 +41,7 @@ export default function FAQAdminPage() {
   };
 
   const deleteFAQ = async (id: number) => {
-    const res = await fetch(`/api/faq/admin/${id}`, { method: "DELETE" });
+    const res = await fetch(`/api/admin/faq/${id}`, { method: "DELETE" });
     if (res.ok) {
       setFaqs((prev) => prev.filter((faq) => faq.id !== id));
     }
