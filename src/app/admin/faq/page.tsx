@@ -6,6 +6,7 @@ export default function FAQAdminPage() {
   const [faqs, setFaqs] = useState<any[]>([]);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("/api/faq/admin")
@@ -25,6 +26,13 @@ export default function FAQAdminPage() {
       setFaqs((prev) => [newFAQ, ...prev]);
       setQuestion("");
       setAnswer("");
+      setError("");
+    } else if (res.status === 409) {
+      setError("En FAQ med denna fråga finns redan.");
+    } else if (res.status === 400) {
+      setError("Både fråga och svar krävs.");
+    } else {
+      setError("Något gick fel vid skapandet av FAQ.");
     }
   };
 
@@ -35,43 +43,64 @@ export default function FAQAdminPage() {
     }
   };
 
+  const sortedFaqs = [...faqs].sort((a, b) =>
+    a.question.localeCompare(b.question)
+  );
+
   return (
-    <div className="max-w-xl mx-auto p-4 space-y-4">
-      <h1 className="text-2xl font-bold">FAQs</h1>
+    <div className="bg-blue-500 min-h-screen flex items-center justify-center px-4">
+      <div className="w-full max-w-2xl p-8 space-y-6">
+        <h1 className="text-3xl font-extrabold text-white text-center">FAQs</h1>
 
-      <input
-        value={question}
-        onChange={(e) => setQuestion(e.target.value)}
-        placeholder="Fråga"
-        className="border p-2 w-full"
-      />
-      <textarea
-        value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
-        placeholder="Svar"
-        className="border p-2 w-full"
-      />
-      <button onClick={createFAQ} className="bg-blue-600 text-white px-4 py-2 rounded">
-        Skapa FAQ
-      </button>
+        {error && <div className="text-red-600 text-center">{error}</div>}
 
-      <ul>
-        {faqs.length === 0 ? (
-          <li className="text-gray-500">Inga FAQs tillgängliga</li>
-        ) : (
-          faqs.map((faq) => (
-            <li key={faq.id} className="border p-2 my-2 flex justify-between">
-              <div>
-                <strong>{faq.question}</strong>
-                <p>{faq.answer}</p>
-              </div>
-              <button onClick={() => deleteFAQ(faq.id)} className="text-red-600">
-                Ta bort
-              </button>
+        <div className="space-y-4">
+          <input
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            placeholder="Fråga"
+            className="border border-blue-300 p-3 w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <textarea
+            value={answer}
+            onChange={(e) => setAnswer(e.target.value)}
+            placeholder="Svar"
+            className="border border-blue-300 p-3 w-full rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button
+            onClick={createFAQ}
+            className="bg-blue-600 text-white px-6 py-3 rounded-xl shadow-md hover:bg-blue-700 transition duration-300"
+          >
+            Skapa FAQ
+          </button>
+        </div>
+
+        <ul>
+          {sortedFaqs.length === 0 ? (
+            <li className="text-gray-400 text-center">
+              Inga FAQs tillgängliga
             </li>
-          ))
-        )}
-      </ul>
+          ) : (
+            sortedFaqs.map((faq) => (
+              <li
+                key={faq.id}
+                className="border border-blue-300 p-4 my-3 rounded-xl bg-white/20 flex justify-between items-start space-x-4"
+              >
+                <div>
+                  <strong className="text-lg text-white">{faq.question}</strong>
+                  <p className="text-white mt-2">{faq.answer}</p>
+                </div>
+                <button
+                  onClick={() => deleteFAQ(faq.id)}
+                  className="text-red-600 hover:text-red-700 transition duration-200"
+                >
+                  Ta bort
+                </button>
+              </li>
+            ))
+          )}
+        </ul>
+      </div>
     </div>
   );
 }
