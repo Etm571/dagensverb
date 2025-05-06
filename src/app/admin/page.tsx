@@ -33,7 +33,7 @@ export default async function AdminMainPage() {
           </li>
           <li>
             <a
-              href="/admin/users"
+              href="/admin/verbs"
               className="block bg-white text-blue-600 text-lg font-semibold px-6 py-4 rounded-xl shadow hover:bg-blue-100 transition duration-200"
             >
               Hantera verb
