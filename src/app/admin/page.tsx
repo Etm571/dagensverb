@@ -1,5 +1,6 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../../auth.config";
+import Unauthorized from "./unauthorized";
 
 export const metadata = {
   title: "Dagens Verb - Admin",
@@ -9,11 +10,7 @@ export default async function AdminMainPage() {
   const session = await getServerSession(authOptions);
 
   if (!session) {
-    return (
-      <div className="flex items-center justify-center h-screen bg-blue-50">
-        <h2 className="text-xl text-blue-900">Please sign in.</h2>
-      </div>
-    );
+    return <Unauthorized />;
   }
 
   return (

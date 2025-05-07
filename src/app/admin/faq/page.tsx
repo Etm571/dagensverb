@@ -1,9 +1,18 @@
+import { getServerSession } from 'next-auth';
+import { authOptions } from "@/../auth.config";
+import ClientHome from './client';
+import Unauthorized from '../unauthorized';
+
 export const metadata = {
-  title: 'Dagens Verb - FAQs',
-};
+    title: 'Dagens Verb - Verb',
+  };
 
-import ClientHome from './clientPage';
+export default async function Page() {
+  const session = await getServerSession(authOptions);
 
-export default function Page() {
+  if (!session) {
+    return <Unauthorized />
+  }
+
   return <ClientHome />;
 }
