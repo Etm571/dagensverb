@@ -22,7 +22,9 @@ export default function VerbList() {
 
   const fetchVerbs = async () => {
     try {
-      const response = await fetch("/api/admin/verb", { credentials: "include" });
+      const response = await fetch("/api/admin/verb", {
+        credentials: "include",
+      });
       const data: VerbResponse = await response.json();
       console.log(data);
       setOldVerbs(data.oldVerbs);
@@ -37,9 +39,9 @@ export default function VerbList() {
   }, []);
 
   const deleteVerb = async (id: number) => {
-    const res = await fetch(`/api/admin/verb/${id}`, { 
+    const res = await fetch(`/api/admin/verb/${id}`, {
       method: "DELETE",
-      credentials: "include"
+      credentials: "include",
     });
     if (res.ok) {
       setUpcomingVerbs((prev) => prev.filter((verb) => verb.id !== id));
@@ -81,7 +83,18 @@ export default function VerbList() {
           <ul className="bg-white/10 rounded-lg p-4 space-y-2">
             {oldVerbs.map((verb) => (
               <li key={verb.id} className="bg-white/20 p-2 rounded shadow-sm">
-                <div className="font-semibold">{verb.name}</div>
+                <div className="flex items-center justify-between font-semibold">
+                  <span>{verb.name}</span>
+                  {verb.priority && (
+                    <Image
+                      src={"/account.png"}
+                      alt="Priority"
+                      width={20}
+                      height={20}
+                      className="inline-block"
+                    />
+                  )}
+                </div>
                 <div className="text-sm opacity-80">Visades: {verb.date}</div>
               </li>
             ))}
@@ -117,7 +130,16 @@ export default function VerbList() {
               >
                 <div>
                   <div className="font-semibold">
-                  {verb.name} {verb.priority && <Image src={"/account.png"} alt="Priority" width={20} height={20} className="inline-block" />}
+                    {verb.name}{" "}
+                    {verb.priority && (
+                      <Image
+                        src={"/account.png"}
+                        alt="Priority"
+                        width={20}
+                        height={20}
+                        className="inline-block"
+                      />
+                    )}
                   </div>
                   <div className="text-sm opacity-80">Tillagd: {verb.date}</div>
                 </div>

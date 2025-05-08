@@ -19,6 +19,8 @@ datasource db {
 model Verb {
   id    Int    @id @default(autoincrement())
   name  String @unique
+  priority Boolean @default(false)
+
 }
 
 model OldVerb {
@@ -30,6 +32,7 @@ model VerbToday {
   id        Int      @id @default(autoincrement())
   name      String
   date     DateTime @unique
+  priority Boolean @default(false)
 }
 
 model VerbRequest {

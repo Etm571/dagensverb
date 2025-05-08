@@ -26,6 +26,7 @@ export async function GET() {
   const formattedOldVerbs = oldVerbs.map((verb) => ({
     id: verb.id,
     name: verb.name,
+    priority: verb.priority,
     date: verb.date.toISOString().split("T")[0],
   }));
 

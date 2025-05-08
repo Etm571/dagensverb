@@ -32,6 +32,7 @@ export async function getRandomVerb() {
   return await handleVerbSelection(
     verb.name,
     verb.id,
+    verb.priority,
     verbCount > 0 ? "verbRequest" : "verb",
     startOfDay
   );
@@ -40,6 +41,7 @@ export async function getRandomVerb() {
 async function handleVerbSelection(
   name: string,
   id: number,
+  priority: boolean,
   source: "verbRequest" | "verb",
   date: Date
 ) {
@@ -52,7 +54,7 @@ async function handleVerbSelection(
   }
 
   await prisma.verbToday.create({
-    data: { name, date },
+    data: { name, date, priority },
   });
 
   return name;
