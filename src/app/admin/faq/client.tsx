@@ -97,7 +97,7 @@ export default function FAQAdminPage() {
                 </div>
                 <button
                   onClick={() => deleteFAQ(faq.id)}
-                  className="text-red-600 hover:text-red-700 transition duration-200"
+                  className="bg-red-500 hover:bg-red-600 text-white text-sm px-3 py-1 rounded"
                 >
                   Ta bort
                 </button>

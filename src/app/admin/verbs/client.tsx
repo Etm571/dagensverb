@@ -1,38 +1,47 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 type Verb = {
-  id: number
-  name: string
-  date: string
-}
+  id: number;
+  name: string;
+  date: string;
+};
 
 type VerbResponse = {
-  oldVerbs: Verb[]
-  upcomingVerbs: Verb[]
-}
+  oldVerbs: Verb[];
+  upcomingVerbs: Verb[];
+};
 
 export default function VerbList() {
-  const [oldVerbs, setOldVerbs] = useState<Verb[]>([])
-  const [upcomingVerbs, setUpcomingVerbs] = useState<Verb[]>([])
+  const [oldVerbs, setOldVerbs] = useState<Verb[]>([]);
+  const [upcomingVerbs, setUpcomingVerbs] = useState<Verb[]>([]);
 
   useEffect(() => {
     const fetchVerbs = async () => {
-      const response = await fetch('/api/admin/verb')
-      const data: VerbResponse = await response.json()
-      setOldVerbs(data.oldVerbs)
-      setUpcomingVerbs(data.upcomingVerbs)
-    }
+      const response = await fetch("/api/admin/verb");
+      const data: VerbResponse = await response.json();
+      setOldVerbs(data.oldVerbs);
+      setUpcomingVerbs(data.upcomingVerbs);
+    };
 
-    fetchVerbs()
-  }, [])
+    fetchVerbs();
+  }, []);
+
+  const deleteVerb = async (id: number) => {
+    const res = await fetch(`/api/admin/verb/${id}`, { method: "DELETE" });
+    if (res.ok) {
+      setUpcomingVerbs((prev) => prev.filter((faq) => faq.id !== id));
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-600 to-blue-400 py-10 px-4 text-white">
       <div className="max-w-3xl mx-auto grid gap-10 md:grid-cols-2">
         <div>
-          <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">Gamla verb</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">
+            Gamla verb
+          </h2>
           <ul className="bg-white/10 rounded-lg p-4 space-y-2">
             {oldVerbs.map((verb) => (
               <li key={verb.id} className="bg-white/20 p-2 rounded shadow-sm">
@@ -44,17 +53,30 @@ export default function VerbList() {
         </div>
 
         <div>
-          <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">Kommande verb</h2>
+          <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">
+            Kommande verb
+          </h2>
           <ul className="bg-white/10 rounded-lg p-4 space-y-2">
             {upcomingVerbs.map((verb) => (
-              <li key={verb.id} className="bg-white/20 p-2 rounded shadow-sm">
-                <div className="font-semibold">{verb.name}</div>
-                <div className="text-sm opacity-80">Tillagd: {verb.date}</div>
+              <li
+                key={verb.id}
+                className="bg-white/20 p-2 rounded shadow-sm flex justify-between items-center"
+              >
+                <div>
+                  <div className="font-semibold">{verb.name}</div>
+                  <div className="text-sm opacity-80">Tillagd: {verb.date}</div>
+                </div>
+                <button
+                  onClick={() => deleteVerb(verb.id)}
+                  className="bg-red-500 hover:bg-red-600 text-white text-sm px-3 py-1 rounded"
+                >
+                  Ta bort
+                </button>
               </li>
             ))}
           </ul>
         </div>
       </div>
     </div>
-  )
+  );
 }
