@@ -19,9 +19,8 @@ export async function GET() {
   });
 
   const upcomingVerbs = await prisma.verbRequest.findMany({
-    orderBy: {
-        sortOrder: "asc",
-    },
+    orderBy: [{ priority: "desc" }, { sortOrder: "asc" }, { date: "asc" }],
+
   });
 
   const formattedOldVerbs = oldVerbs.map((verb) => ({
@@ -44,8 +43,6 @@ export async function GET() {
   });
 }
 
-
-
 export async function POST(req: Request) {
   const session = await auth();
 
@@ -61,9 +58,7 @@ export async function POST(req: Request) {
   }
 
   const latestVerb = await prisma.verbRequest.findFirst({
-    orderBy: {
-      sortOrder: "asc",
-    },
+    orderBy: [{ priority: "desc" }, { sortOrder: "asc" }],
   });
 
   const newSortOrder = latestVerb ? latestVerb.sortOrder - 1 : -1;
