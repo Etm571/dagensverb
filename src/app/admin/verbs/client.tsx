@@ -26,7 +26,6 @@ export default function VerbList() {
         credentials: "include",
       });
       const data: VerbResponse = await response.json();
-      console.log(data);
       setOldVerbs(data.oldVerbs);
       setUpcomingVerbs(data.upcomingVerbs);
     } catch (error) {
