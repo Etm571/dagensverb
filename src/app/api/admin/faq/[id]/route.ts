@@ -6,7 +6,7 @@ import { auth } from "@/../auth.config";
 const prisma = new PrismaClient();
 
 
-export async function DELETE(props: { params: Promise<{ id: string }> }) {
+export async function DELETE(req: Request, props: { params: Promise<{ id: string }> }) {
   const session = await auth();
 
   if (!session) {
