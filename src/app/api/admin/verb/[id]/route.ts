@@ -16,7 +16,7 @@ export async function DELETE(props: { params: Promise<{ id: string }> }) {
   const id = Number((await props.params).id);
 
   try {
-    await prisma.fAQ.delete({ where: { id } });
+    await prisma.verbRequest.delete({ where: { id } });
     return NextResponse.json({ message: "FAQ removed" });
   } catch {
     return NextResponse.json({ error: "Could not remove FAQ." }, { status: 500 });
