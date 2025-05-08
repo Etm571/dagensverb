@@ -22,6 +22,7 @@ export default function VerbList() {
     try {
       const response = await fetch("/api/admin/verb", { credentials: "include" });
       const data: VerbResponse = await response.json();
+      console.log(data);
       setOldVerbs(data.oldVerbs);
       setUpcomingVerbs(data.upcomingVerbs);
     } catch (error) {
@@ -58,8 +59,8 @@ export default function VerbList() {
       });
 
       if (response.ok) {
-        setNewVerbName(""); // Clear input field
-        await fetchVerbs(); // Refresh the verb lists
+        setNewVerbName("");
+        await fetchVerbs();
       } else {
         console.error("Failed to add verb");
       }
@@ -100,7 +101,7 @@ export default function VerbList() {
               />
               <button
                 type="submit"
-                className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded font-medium transition-colors"
+                className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded font-medium transition-colors"
               >
                 Lägg till
               </button>
