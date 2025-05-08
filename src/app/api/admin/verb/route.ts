@@ -33,6 +33,7 @@ export async function GET() {
   const formattedUpcomingVerbs = upcomingVerbs.map((verb) => ({
     id: verb.id,
     name: verb.name,
+    priority: verb.priority,
     date: verb.date.toISOString().split("T")[0],
   }));
 
@@ -42,6 +43,8 @@ export async function GET() {
     status: 200,
   });
 }
+
+
 
 export async function POST(req: Request) {
   const session = await auth();
@@ -64,18 +67,18 @@ export async function POST(req: Request) {
   });
 
   const newSortOrder = latestVerb ? latestVerb.sortOrder - 1 : -1;
-  console.log("New sort order:", newSortOrder);
 
   const newVerb = await prisma.verbRequest.create({
     data: {
       name,
       sortOrder: newSortOrder,
+      priority: true,
       date: new Date(),
     },
   });
 
   return NextResponse.json(
-    { message: "Verb added at the top", verb: newVerb },
+    { message: "Verb created", verb: newVerb },
     { status: 201 }
   );
 }

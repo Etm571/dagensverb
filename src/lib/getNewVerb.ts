@@ -22,7 +22,7 @@ export async function getRandomVerb() {
   const verb =
   verbCount > 0
     ? await prisma.verbRequest.findFirst({
-        orderBy: { id: 'asc' }
+        orderBy: { sortOrder: 'asc' }
       })
     : await prisma.verb.findFirst();
 

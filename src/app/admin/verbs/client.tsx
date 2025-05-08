@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Verb = {
   id: number;
   name: string;
   date: string;
+  priority: boolean;
 };
 
 type VerbResponse = {
@@ -114,7 +116,9 @@ export default function VerbList() {
                 className="bg-white/20 p-2 rounded shadow-sm flex justify-between items-center"
               >
                 <div>
-                  <div className="font-semibold">{verb.name}</div>
+                  <div className="font-semibold">
+                  {verb.name} {verb.priority && <Image src={"/account.png"} alt="Priority" width={20} height={20} className="inline-block" />}
+                  </div>
                   <div className="text-sm opacity-80">Tillagd: {verb.date}</div>
                 </div>
                 <button

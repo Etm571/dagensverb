@@ -38,6 +38,7 @@ model VerbRequest {
   date     DateTime @unique
   updatedAt DateTime @default(now()) @updatedAt
   sortOrder Int @default(0)
+  priority Boolean @default(false)
 }
 
 model FAQ {
