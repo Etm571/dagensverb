@@ -20,9 +20,12 @@ export async function getRandomVerb() {
   console.log("verbCount", verbCount);
 
   const verb =
-    verbCount > 0
-      ? await prisma.verbRequest.findFirst()
-      : await prisma.verb.findFirst();
+  verbCount > 0
+    ? await prisma.verbRequest.findFirst({
+        orderBy: { sortOrder: 'asc' }
+      })
+    : await prisma.verb.findFirst();
+
 
   if (!verb) throw new Error("No verbs found in the database");
 

@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Verb = {
   id: number;
   name: string;
   date: string;
+  priority: boolean;
 };
 
 type VerbResponse = {
@@ -16,22 +18,56 @@ type VerbResponse = {
 export default function VerbList() {
   const [oldVerbs, setOldVerbs] = useState<Verb[]>([]);
   const [upcomingVerbs, setUpcomingVerbs] = useState<Verb[]>([]);
+  const [newVerbName, setNewVerbName] = useState("");
 
-  useEffect(() => {
-    const fetchVerbs = async () => {
-      const response = await fetch("/api/admin/verb");
+  const fetchVerbs = async () => {
+    try {
+      const response = await fetch("/api/admin/verb", { credentials: "include" });
       const data: VerbResponse = await response.json();
+      console.log(data);
       setOldVerbs(data.oldVerbs);
       setUpcomingVerbs(data.upcomingVerbs);
-    };
+    } catch (error) {
+      console.error("Error fetching verbs:", error);
+    }
+  };
 
+  useEffect(() => {
     fetchVerbs();
   }, []);
 
   const deleteVerb = async (id: number) => {
-    const res = await fetch(`/api/admin/verb/${id}`, { method: "DELETE" });
+    const res = await fetch(`/api/admin/verb/${id}`, { 
+      method: "DELETE",
+      credentials: "include"
+    });
     if (res.ok) {
-      setUpcomingVerbs((prev) => prev.filter((faq) => faq.id !== id));
+      setUpcomingVerbs((prev) => prev.filter((verb) => verb.id !== id));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newVerbName.trim()) return;
+
+    try {
+      const response = await fetch("/api/admin/verb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({ name: newVerbName }),
+      });
+
+      if (response.ok) {
+        setNewVerbName("");
+        await fetchVerbs();
+      } else {
+        console.error("Failed to add verb");
+      }
+    } catch (error) {
+      console.error("Error adding verb:", error);
     }
   };
 
@@ -56,6 +92,23 @@ export default function VerbList() {
           <h2 className="text-2xl font-bold mb-4 border-b border-white pb-2">
             Kommande verb
           </h2>
+          <form onSubmit={handleSubmit} className="mb-4">
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={newVerbName}
+                onChange={(e) => setNewVerbName(e.target.value)}
+                placeholder="Nytt verb..."
+                className="flex-1 p-2 rounded bg-white/20 text-white placeholder-white/50 border border-white/30 focus:outline-none focus:ring-2 focus:ring-white"
+              />
+              <button
+                type="submit"
+                className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded font-medium transition-colors"
+              >
+                Lägg till
+              </button>
+            </div>
+          </form>
           <ul className="bg-white/10 rounded-lg p-4 space-y-2">
             {upcomingVerbs.map((verb) => (
               <li
@@ -63,7 +116,9 @@ export default function VerbList() {
                 className="bg-white/20 p-2 rounded shadow-sm flex justify-between items-center"
               >
                 <div>
-                  <div className="font-semibold">{verb.name}</div>
+                  <div className="font-semibold">
+                  {verb.name} {verb.priority && <Image src={"/account.png"} alt="Priority" width={20} height={20} className="inline-block" />}
+                  </div>
                   <div className="text-sm opacity-80">Tillagd: {verb.date}</div>
                 </div>
                 <button
