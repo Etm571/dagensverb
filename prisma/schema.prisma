@@ -36,6 +36,8 @@ model VerbRequest {
   id        Int      @id @default(autoincrement())
   name      String
   date     DateTime @unique
+  updatedAt DateTime @default(now()) @updatedAt
+  sortOrder Int @default(0)
 }
 
 model FAQ {
