@@ -1,17 +1,9 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@/generated/prisma";
-import { auth } from "@/../auth.config";
-import { stat } from "fs";
 
 const prisma = new PrismaClient();
 
 export async function GET() {
-  const session = await auth();
-
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
   const oldVerbs = await prisma.verbToday.findMany({
     orderBy: {
       date: "desc",
@@ -45,11 +37,7 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  const session = await auth();
 
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
 
   const body = await req.json();
   const { name } = body;
