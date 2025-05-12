@@ -20,15 +20,22 @@ export async function GET(request: Request) {
         createdAt: "desc",
       },
     });
-
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+    
     const dagensVerb = await prisma.verbToday.findFirst({
       where: {
         name: query,
-      },
-      orderBy: {
-        date: "desc",
+        date: {
+          gte: today,
+          lt: tomorrow,
+        },
       },
     });
+    
     
     if (query === dagensVerb?.name) {
       return NextResponse.json(
